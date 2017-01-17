@@ -15,11 +15,10 @@ namespace BaristaModeling
             Drink applejuice = new Drink("Apple Juice", "juice", 0f, 4, 'y');
             Drink orangejuice = new Drink("Orange Juice", "juice", 0f, 4, 'o');
 
-            Customer tommy = new Customer("Tommy", 'M', 8);
-            Customer ashley = new Customer("Ashley", 'F', 2);
+            Customer tommy = new Customer("Tommy", 'M');
+            Customer ashley = new Customer("Ashley", 'F');
 
-            tommy.BuyDrink(java);
-            Console.WriteLine(tommy.wallet);
+            
             
 
         }
