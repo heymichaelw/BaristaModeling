@@ -32,6 +32,20 @@ namespace BaristaModeling
              return price;
         }
 
+        public int IsMadeFor(Customer myCustomer)
+        {
+            if (caffeine > myCustomer.tolerance - myCustomer.intake)
+            {
+                DeCaf();
+                myCustomer.BuyDrink(this);
+            }
+            else
+            {
+                myCustomer.BuyDrink(this);
+            }
+            return myCustomer.wallet;
+        }
+
         public void OnSale()
         {
             price--;

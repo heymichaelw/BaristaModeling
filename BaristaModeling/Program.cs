@@ -20,8 +20,8 @@ namespace BaristaModeling
             Customer fred = new Customer("Fred", 0.4f);
 
             ashley.BuyDrink(redeye);
+            redeye.IsMadeFor(ashley);
             Console.WriteLine(ashley);
-            ashley.BuyDrink(redeye);
 
 
         }
