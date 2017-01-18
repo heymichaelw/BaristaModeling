@@ -16,48 +16,38 @@ namespace BaristaModeling
     {
         public static string name;
         public int wallet;
-        public char gender;
         public float intake;
-        public int baristalike;
+        //public int baristalike;
         public CustomerStatus customerstatus = CustomerStatus.Welcomed;
         
 
-        public Customer(string _name, char _gender)
+        public Customer(string _name)
         {
             name = _name;
             wallet = 20;
-            gender = _gender;
             intake = 0.0f;
-            baristalike = 3;
+            //baristalike = 3;
 
         }
 
         
         public int BuyDrink(Drink myDrink)
         {
+            myDrink.CheckMenu();
             wallet -= myDrink.GetPrice();
-            baristalike--;
+            //baristalike--;
+            myDrink.ordercount++;
             return wallet;
         }
 
         public int TipBarista()
         {
             wallet -= 1;
-            baristalike += 2;
+            //baristalike += 2;
             return wallet;
         }
 
-        public string SurpriseMe()
-        {
-            if (gender == 'M')
-            {
-
-            }
-
-
-
-            return Drink.name;
-        }
+        
 
 
     }

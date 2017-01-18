@@ -14,16 +14,16 @@ namespace BaristaModeling
         public string type;
         public float caffeine;
         private int price;
-        public char color;
+        public int ordercount;
         public bool onMenu;
 
-        public Drink(string _name, string _type, float _caffeine, int _price, char _color)
+        public Drink(string _name, string _type, float _caffeine, int _price)
         {
             name = _name;
             type = _type;
             caffeine = _caffeine;
             price = _price;
-            color = _color;
+            ordercount = 0;
             onMenu = true;
         }
 
@@ -40,6 +40,18 @@ namespace BaristaModeling
         public void DeCaf()
         {
             caffeine = 0;
+        }
+
+        public void CheckMenu()
+        {
+            if (ordercount > 10)
+            {
+                onMenu = false;
+            }
+            else
+            {
+                onMenu = true;
+            }
         }
 
 

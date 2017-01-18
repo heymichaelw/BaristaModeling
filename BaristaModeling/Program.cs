@@ -10,13 +10,14 @@ namespace BaristaModeling
     {
         static void Main(string[] args)
         {
-            Drink java = new Drink("Java", "coffee", 0.6f, 3, 'b');
-            Drink redeye = new Drink("Red Eye", "coffee", 0.9f, 5, 'b');
-            Drink applejuice = new Drink("Apple Juice", "juice", 0f, 4, 'y');
-            Drink orangejuice = new Drink("Orange Juice", "juice", 0f, 4, 'o');
+            Drink java = new Drink("Java", "coffee", 0.6f, 3);
+            Drink redeye = new Drink("Red Eye", "coffee", 0.9f, 5);
+            Drink applejuice = new Drink("Apple Juice", "juice", 0f, 4);
+            Drink orangejuice = new Drink("Orange Juice", "juice", 0f, 4);
 
-            Customer tommy = new Customer("Tommy", 'M');
-            Customer ashley = new Customer("Ashley", 'F');
+
+            Customer tommy = new Customer("Tommy");
+            Customer ashley = new Customer("Ashley");
 
             
             
