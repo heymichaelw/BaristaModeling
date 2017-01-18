@@ -35,26 +35,33 @@ namespace BaristaModeling
 
         public int BuyDrink(Drink myDrink)
         {
-            if (wallet > 0)
+            if (intake < tolerance - myDrink.caffeine)
             {
-                if (myDrink.onMenu == true)
+                if (wallet > 0)
                 {
-                    myDrink.ordercount++;
-                    wallet -= myDrink.GetPrice();
-                    //baristalike--;
-                    myDrink.onMenu = myDrink.CheckMenu();
-                    intake += myDrink.caffeine;
-                }
+                    if (myDrink.onMenu == true)
+                    {
+                        myDrink.ordercount++;
+                        wallet -= myDrink.GetPrice();
+                        //baristalike--;
+                        myDrink.onMenu = myDrink.CheckMenu();
+                        intake += myDrink.caffeine;
+                    }
 
+                    else
+                    {
+                        Console.WriteLine("Sorry, that is sold out!");
+                    }
+
+                }
                 else
                 {
-                    Console.WriteLine("Sorry, that is sold out!");
+                    Console.WriteLine("Sorry, it looks like your wallet is empty.");
                 }
-                
             }
             else
             {
-                Console.WriteLine("Sorry, it looks like your wallet is empty.");
+                Console.WriteLine("Maybe try something with less caffeine!");
             }
             return wallet;
         }
