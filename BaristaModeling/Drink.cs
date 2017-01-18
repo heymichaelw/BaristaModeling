@@ -42,16 +42,18 @@ namespace BaristaModeling
             caffeine = 0;
         }
 
-        public void CheckMenu()
+        public bool CheckMenu()
         {
             if (ordercount > 10)
             {
                 onMenu = false;
             }
-            else
-            {
-                onMenu = true;
-            }
+            return onMenu;
+        }
+
+        public override string ToString()
+        {
+            return $"{ordercount} : {onMenu}";
         }
 
 

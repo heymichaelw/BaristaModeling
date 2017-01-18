@@ -30,13 +30,21 @@ namespace BaristaModeling
 
         }
 
-        
+
         public int BuyDrink(Drink myDrink)
         {
-            //myDrink.CheckMenu();
-            wallet -= myDrink.GetPrice();
-            //baristalike--;
-            myDrink.ordercount++;
+            while (myDrink.onMenu == true)
+            {
+                myDrink.ordercount++;
+                wallet -= myDrink.GetPrice();
+                //baristalike--;
+                myDrink.onMenu = myDrink.CheckMenu();
+            } 
+              
+             else
+            {
+                Console.WriteLine("Sorry, that is sold out!");
+            }
             return wallet;
         }
 
