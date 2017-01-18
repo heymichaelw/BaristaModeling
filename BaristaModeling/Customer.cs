@@ -14,7 +14,7 @@ namespace BaristaModeling
 
     class Customer
     {
-        public static string name;
+        public string name;
         public int wallet;
         public float intake;
         //public int baristalike;
