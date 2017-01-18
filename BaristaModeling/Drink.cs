@@ -32,6 +32,8 @@ namespace BaristaModeling
              return price;
         }
 
+
+        //if drink will surpass their tolerance, a drink can be made with no caffeine
         public int IsMadeFor(Customer myCustomer)
         {
             if (caffeine > myCustomer.tolerance - myCustomer.intake)
