@@ -42,6 +42,7 @@ namespace BaristaModeling
             caffeine = 0;
         }
 
+        //checking to see if drink is sold out (only 10 in stock of each)
         public bool CheckMenu()
         {
             if (ordercount > 10)

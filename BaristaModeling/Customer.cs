@@ -17,13 +17,15 @@ namespace BaristaModeling
         public string name;
         public int wallet;
         public float intake;
+        public float tolerance;
         //public int baristalike;
         //public CustomerStatus customerstatus = CustomerStatus.Welcomed;
         
 
-        public Customer(string _name)
+        public Customer(string _name, float _tolerance)
         {
             name = _name;
+            tolerance = _tolerance;
             wallet = 20;
             intake = 0.0f;
             //baristalike = 3;
@@ -33,17 +35,26 @@ namespace BaristaModeling
 
         public int BuyDrink(Drink myDrink)
         {
-            while (myDrink.onMenu == true)
+            if (wallet > 0)
             {
-                //myDrink.ordercount++;
-                //wallet -= myDrink.GetPrice();
-                //baristalike--;
-                //myDrink.onMenu = myDrink.CheckMenu();
+                if (myDrink.onMenu == true)
+                {
+                    myDrink.ordercount++;
+                    wallet -= myDrink.GetPrice();
+                    //baristalike--;
+                    myDrink.onMenu = myDrink.CheckMenu();
+                    intake += myDrink.caffeine;
+                }
+
+                else
+                {
+                    Console.WriteLine("Sorry, that is sold out!");
+                }
+                
             }
-              
-             else
+            else
             {
-                Console.WriteLine("Sorry, that is sold out!");
+                Console.WriteLine("Sorry, it looks like your wallet is empty.");
             }
             return wallet;
         }
@@ -57,7 +68,7 @@ namespace BaristaModeling
 
         public override string ToString()
         {
-            return $"{name} : {wallet}";
+            return $"{name} : {wallet} : {intake}";
         }
 
 

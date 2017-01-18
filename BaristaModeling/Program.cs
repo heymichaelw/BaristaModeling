@@ -15,23 +15,17 @@ namespace BaristaModeling
             Drink latte = new Drink("Latte", "milk", 0.4f, 4);
             Drink hotchoc = new Drink("Hot Chocolate", "milk", 0f, 4);
 
-            Customer tommy = new Customer("Tommy");
-            Customer ashley = new Customer("Ashley");
-            Customer fred = new Customer("Fred");
+            Customer tommy = new Customer("Tommy", 3.0f);
+            Customer ashley = new Customer("Ashley", 1.5f);
+            Customer fred = new Customer("Fred", 0.4f);
 
-            ashley.BuyDrink(java);
-            tommy.BuyDrink(java);
-            tommy.BuyDrink(java);
-            tommy.BuyDrink(java);
-            tommy.BuyDrink(java);
-            tommy.BuyDrink(java);
-            tommy.BuyDrink(java);
-            tommy.BuyDrink(java);
-            ashley.BuyDrink(java);
-            ashley.BuyDrink(java);
+            ashley.BuyDrink(redeye);
+            ashley.BuyDrink(redeye);
+            ashley.BuyDrink(redeye);
+            ashley.BuyDrink(redeye);
             ashley.BuyDrink(java);
             Console.WriteLine(ashley);
-            Console.WriteLine(java);
+
 
         }
 
