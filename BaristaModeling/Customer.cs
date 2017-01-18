@@ -35,11 +35,11 @@ namespace BaristaModeling
         {
             while (myDrink.onMenu == true)
             {
-                myDrink.ordercount++;
-                wallet -= myDrink.GetPrice();
+                //myDrink.ordercount++;
+                //wallet -= myDrink.GetPrice();
                 //baristalike--;
-                myDrink.onMenu = myDrink.CheckMenu();
-            } 
+                //myDrink.onMenu = myDrink.CheckMenu();
+            }
               
              else
             {
