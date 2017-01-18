@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 namespace BaristaModeling
 {
 
-    enum CustomerStatus
-    {
-        Welcomed, Banned
-    }
+    //enum CustomerStatus
+    //{
+    //    Welcomed, Banned
+    //}
 
     class Customer
     {
@@ -18,7 +18,7 @@ namespace BaristaModeling
         public int wallet;
         public float intake;
         //public int baristalike;
-        public CustomerStatus customerstatus = CustomerStatus.Welcomed;
+        //public CustomerStatus customerstatus = CustomerStatus.Welcomed;
         
 
         public Customer(string _name)
@@ -33,7 +33,7 @@ namespace BaristaModeling
         
         public int BuyDrink(Drink myDrink)
         {
-            myDrink.CheckMenu();
+            //myDrink.CheckMenu();
             wallet -= myDrink.GetPrice();
             //baristalike--;
             myDrink.ordercount++;
@@ -47,7 +47,10 @@ namespace BaristaModeling
             return wallet;
         }
 
-        
+        public override string ToString()
+        {
+            return $"{name} : {wallet}";
+        }
 
 
     }
