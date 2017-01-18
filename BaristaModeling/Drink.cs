@@ -39,7 +39,7 @@ namespace BaristaModeling
             if (caffeine > myCustomer.tolerance - myCustomer.intake)
             {
                 DeCaf();
-                myCustomer.BuyDrink(this);
+                myCustomer.BuyDrink(this);                  //after googling "c# instance referencing itself" : https://msdn.microsoft.com/en-us/library/dk1507sz.aspx
             }
             else
             {
